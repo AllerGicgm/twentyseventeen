@@ -117,7 +117,7 @@ function wc_qb_redirect($url) {
 }
 
 if (class_exists('WC_Product_Data_Store_CPT')) {
-	class 2017_Product_Data_Store_CPT extends WC_Product_Data_Store_CPT {
+	class twentyseventeen_Product_Data_Store_CPT extends WC_Product_Data_Store_CPT {
 
 		/**
 		 * Method to read a product from the database.
@@ -179,7 +179,7 @@ if (class_exists('WC_Product_Data_Store_CPT')) {
 add_filter( 'woocommerce_data_stores', 'woocommerce_data_stores' );
 
 function woocommerce_data_stores ( $stores ) {
-	$stores['product'] = '2017_Product_Data_Store_CPT';
+	$stores['product'] = 'twentyseventeen_Product_Data_Store_CPT';
 	return $stores;
 }
 
