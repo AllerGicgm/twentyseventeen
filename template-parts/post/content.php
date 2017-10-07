@@ -63,7 +63,18 @@
 				) );
 				$terms = rtrim( trim( str_replace( '<br />',  ', ', $terms ) ), ', ' );
 				echo  $terms;
-			}
+			}?>
+
+			<form action="" method="post">
+            <input name="add-to-cart" type="hidden" value="<?php the_ID(); ?>" />
+            <input name="quantity" type="number" value="1" min="1"  />
+            <input name="submit" type="submit" value="Add to cart" />
+      </form>
+<?php
+			echo sprintf( '<br/><a rel="nofollow" href="%s/?add-to-cart=%s&qb=1" data-quantity="1">%s</a>',
+				esc_url( home_url() ),
+				esc_attr(  $post->ID ),
+				__( 'Quick buy', 'twentyseventeen' ));
 		}
 		?>
 	</header><!-- .entry-header -->
